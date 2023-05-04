@@ -1,5 +1,6 @@
 package blog.entity;
 
+import blog.controller.dto.response.MemberResponseDTO;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -33,5 +34,14 @@ public class Member {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public MemberResponseDTO fromEntity(String message) {
+        return MemberResponseDTO.builder()
+                .message(message)
+                .memberId(memberId)
+                .email(email)
+                .name(name)
+                .build();
     }
 }
