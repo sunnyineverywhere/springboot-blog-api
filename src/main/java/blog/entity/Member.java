@@ -30,4 +30,8 @@ public class Member {
         this.name = name;
         this.password = password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
